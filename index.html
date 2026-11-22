@@ -4,214 +4,373 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Crystal Securities | Facility Management</title>
+
+<title>Crystal Securities | Manpower & Facility Management</title>
+<meta name="description" content="Crystal Securities provides manpower supply, industrial labour contracts, housekeeping and facility management solutions.">
 
 <style>
+:root {
+  --gold: #d6b45b;
+  --dark: #080a0d;
+  --panel: #12161c;
+  --white: #f5f5f5;
+  --muted: #b8bdc5;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #080808;
-    color: white;
+  background: var(--dark);
+  color: var(--white);
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
 }
 
-:root {
-    --gold: #d4af37;
-    --black: #080808;
+a { text-decoration: none; }
+
+.container {
+  width: 88%;
+  max-width: 1200px;
+  margin: auto;
 }
 
 header {
-    background: #101010;
-    padding: 20px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid #39301b;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(8,10,13,.97);
+  border-bottom: 1px solid #40351e;
+}
+
+.navbar {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
-    color: var(--gold);
-    font-size: 23px;
-    font-weight: bold;
+  color: var(--gold);
+  font-size: 23px;
+  font-weight: 900;
+  letter-spacing: 1px;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 22px;
-    font-size: 14px;
+.logo small {
+  display: block;
+  font-size: 9px;
+  color: white;
+  letter-spacing: 4px;
 }
 
-nav a:hover {
-    color: var(--gold);
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
 }
 
-.hero {
-    min-height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 40px 20px;
-    background:
-    linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.85)),
-    url('https://images.unsplash.com/photo-1497366754035-f200968a6e72');
-    background-size: cover;
-    background-position: center;
+.nav-links a {
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  transition: .3s;
 }
 
-.hero h1 {
-    font-size: clamp(35px, 6vw, 65px);
-    color: var(--gold);
-    margin-bottom: 20px;
-}
+.nav-links a:hover { color: var(--gold); }
 
-.hero p {
-    font-size: 18px;
-    max-width: 700px;
-    line-height: 1.7;
+.menu-btn {
+  display: none;
+  color: var(--gold);
+  background: none;
+  border: 1px solid var(--gold);
+  padding: 7px 12px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .btn {
-    display: inline-block;
-    background: var(--gold);
-    color: black;
-    padding: 14px 28px;
-    margin-top: 28px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 4px;
+  display: inline-block;
+  padding: 13px 27px;
+  background: var(--gold);
+  color: #111;
+  font-weight: bold;
+  border-radius: 3px;
+  transition: .3s;
 }
 
-section {
-    padding: 80px 8%;
+.btn:hover {
+  background: white;
+  transform: translateY(-3px);
 }
 
-.section-title {
-    text-align: center;
-    font-size: 35px;
-    color: var(--gold);
-    margin-bottom: 35px;
+.hero {
+  min-height: 680px;
+  display: flex;
+  align-items: center;
+  background:
+  linear-gradient(90deg,rgba(0,0,0,.94),rgba(0,0,0,.45)),
+  url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2000&q=85")
+  center/cover;
 }
 
-.about {
-    text-align: center;
-    max-width: 900px;
-    margin: auto;
-    line-height: 1.9;
-    color: #ccc;
+.hero-content { max-width: 760px; }
+
+.tag {
+  color: var(--gold);
+  font-weight: bold;
+  letter-spacing: 4px;
+  font-size: 12px;
 }
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
+.hero h1 {
+  font-size: clamp(42px,6vw,76px);
+  line-height: 1.12;
+  margin: 20px 0;
 }
 
-.card {
-    background: #151515;
-    padding: 35px 25px;
-    border: 1px solid #4c4022;
-    border-radius: 8px;
-    transition: .3s;
+.hero h1 span { color: var(--gold); }
+
+.hero p {
+  color: #dedede;
+  font-size: 17px;
+  max-width: 650px;
+  margin-bottom: 30px;
 }
 
-.card:hover {
-    transform: translateY(-7px);
-    border-color: var(--gold);
+.section {
+  padding: 95px 0;
 }
 
-.card h3 {
-    color: var(--gold);
-    margin-bottom: 15px;
+.section-heading {
+  text-align: center;
+  margin-bottom: 48px;
 }
 
-.card p {
-    color: #bbb;
-    line-height: 1.7;
+.section-heading small {
+  color: var(--gold);
+  letter-spacing: 3px;
+  font-weight: bold;
 }
 
-.companies {
-    background: #111;
-    text-align: center;
+.section-heading h2 {
+  font-size: clamp(30px,4vw,43px);
+  margin-top: 8px;
 }
 
-.company-name {
-    color: var(--gold);
-    font-size: 24px;
-    font-weight: bold;
-    margin: 20px;
+.section-heading p {
+  color: var(--muted);
+  margin-top: 10px;
 }
 
-.clients {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 35px;
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
 }
 
-.clients span {
-    font-size: 23px;
-    font-weight: bold;
-    color: var(--gold);
+.about-image {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border: 1px solid #665126;
+}
+
+.about-text h2 {
+  font-size: 38px;
+  margin-bottom: 18px;
+}
+
+.about-text h2 span { color: var(--gold); }
+
+.about-text p {
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.services {
+  background: #0d1117;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 23px;
+}
+
+.service-card {
+  background: var(--panel);
+  border: 1px solid #292a2b;
+  padding: 30px;
+  transition: .35s;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold);
+}
+
+.service-icon {
+  color: var(--gold);
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.service-card h3 {
+  color: var(--gold);
+  font-size: 19px;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 25px;
+}
+
+.why-card {
+  padding: 25px;
+  border-left: 2px solid var(--gold);
+  background: #11151b;
+}
+
+.why-card h3 {
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.why-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.cta {
+  text-align: center;
+  background:
+  linear-gradient(rgba(0,0,0,.83),rgba(0,0,0,.9)),
+  url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80")
+  center/cover;
+}
+
+.cta h2 {
+  font-size: clamp(30px,4vw,44px);
+  margin-bottom: 12px;
+}
+
+.cta p {
+  color: #ccc;
+  margin-bottom: 25px;
 }
 
 .contact {
-    text-align: center;
+  background: #0d1117;
 }
 
-.contact p {
-    margin: 15px 0;
-    color: #ccc;
-    line-height: 1.7;
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
 }
 
-.contact a {
-    color: var(--gold);
-    text-decoration: none;
+.contact-info h3 {
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.contact-info a { color: var(--gold); }
+
+form {
+  background: #171c23;
+  padding: 30px;
+  border: 1px solid #37322a;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  background: #0b0e12;
+  border: 1px solid #393939;
+  color: white;
+  font: inherit;
+}
+
+form textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+form button {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  font: inherit;
 }
 
 footer {
-    background: #050505;
-    text-align: center;
+  padding: 35px 0;
+  text-align: center;
+  background: #050608;
+  color: #999;
+  border-top: 1px solid #453a23;
+}
+
+footer strong { color: var(--gold); }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: .7s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media(max-width:800px) {
+  .menu-btn { display: block; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 78px;
+    left: 0;
+    width: 100%;
+    background: #101319;
     padding: 25px;
-    border-top: 1px solid #4c4022;
-    color: #aaa;
-}
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-footer span {
-    color: var(--gold);
-}
+  .nav-links.open { display: flex; }
 
-@media(max-width:700px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
-    }
+  .about-grid, .contact-grid {
+    grid-template-columns: 1fr;
+  }
 
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-    }
+  .service-grid, .why-grid {
+    grid-template-columns: 1fr;
+  }
 
-    nav a {
-        margin: 0;
-    }
+  .hero { min-height: 580px; }
 
-    .hero {
-        min-height: 500px;
-    }
+  .section { padding: 65px 0; }
 }
 </style>
 </head>
@@ -219,130 +378,313 @@ footer span {
 <body>
 
 <header>
-    <div class="logo">CRYSTAL & SECURITIES</div>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#companies">Companies</a>
-        <a href="#contact">Contact</a>
+  <div class="container navbar">
+    <a href="#home" class="logo">
+      CRYSTAL SECURITIES
+      <small>PROFESSIONAL SOLUTIONS</small>
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" onclick="closeMenu()">HOME</a>
+      <a href="#about" onclick="closeMenu()">ABOUT US</a>
+      <a href="#services" onclick="closeMenu()">SERVICES</a>
+      <a href="#why" onclick="closeMenu()">WHY US</a>
+      <a href="#contact" onclick="closeMenu()">CONTACT</a>
     </nav>
+  </div>
 </header>
 
+<main>
+
 <section class="hero" id="home">
-    <h1>CRYSTAL SECURITIES</h1>
+  <div class="container hero-content">
+    <div class="tag">YOUR TRUSTED BUSINESS PARTNER</div>
+
+    <h1>
+      PROFESSIONAL<br>
+      <span>MANPOWER &</span><br>
+      FACILITY SOLUTIONS
+    </h1>
+
     <p>
-        Your Trusted Partner in Manpower Supply,
-        Industrial Labour Contracts and Facility Management.
+      Reliable manpower supply, industrial labour contracts,
+      housekeeping and integrated facility management
+      solutions for businesses.
     </p>
-    <a href="#contact" class="btn">GET IN TOUCH</a>
+
+    <a href="#contact" class="btn">DISCUSS YOUR REQUIREMENTS →</a>
+  </div>
 </section>
 
-<section id="about">
-    <h2 class="section-title">About Our Group</h2>
-    <div class="about">
+<section class="section" id="about">
+  <div class="container about-grid reveal">
+
+    <img class="about-image"
+    src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=80"
+    alt="Professional office environment">
+
+    <div class="about-text">
+      <div class="tag">ABOUT OUR COMPANY</div>
+
+      <h2>Building Better <span>Workplaces</span></h2>
+
+      <p>
+        Crystal Securities is focused on providing
+        dependable manpower supply, housekeeping,
+        industrial labour contract and facility
+        management services.
+      </p>
+
+      <p>
+        We believe in professional service delivery,
+        operational efficiency, responsible workforce
+        management and long-term business relationships.
+      </p>
+
+      <p>
+        Our objective is to help organisations maintain
+        productive, organised and well-managed workplaces.
+      </p>
+
+      <a href="#services" class="btn">EXPLORE OUR SERVICES</a>
+    </div>
+  </div>
+</section>
+
+<section class="section services" id="services">
+  <div class="container">
+
+    <div class="section-heading reveal">
+      <small>WHAT WE DO</small>
+      <h2>Our Core Services</h2>
+      <p>Professional workforce and facility solutions.</p>
+    </div>
+
+    <div class="service-grid">
+
+      <div class="service-card reveal">
+        <div class="service-icon">♟</div>
+        <h3>Manpower Supply</h3>
         <p>
-        Crystal & Devrishi Group is committed to delivering
-        reliable manpower solutions, professional housekeeping
-        and comprehensive facility management services.
-        <br><br>
-        Our focus is on quality, professionalism, operational
-        efficiency and long-term business relationships.
-        We aim to provide dependable workforce solutions
-        for businesses across different industries.
+          Skilled, semi-skilled and unskilled manpower
+          solutions according to business requirements.
         </p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">✦</div>
+        <h3>Housekeeping Services</h3>
+        <p>
+          Professional cleaning and housekeeping
+          solutions for commercial and industrial spaces.
+        </p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">⚙</div>
+        <h3>Industrial Labour Contracts</h3>
+        <p>
+          Workforce deployment and labour contract
+          support for industrial operations.
+        </p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">▣</div>
+        <h3>Facility Management</h3>
+        <p>
+          Organised facility support for efficient
+          workplace operations and maintenance.
+        </p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">⌂</div>
+        <h3>Commercial Support</h3>
+        <p>
+          Workforce and operational support
+          for commercial establishments.
+        </p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">◆</div>
+        <h3>Workforce Management</h3>
+        <p>
+          Structured workforce coordination
+          based on project and operational needs.
+        </p>
+      </div>
+
     </div>
+  </div>
 </section>
 
-<section id="services">
-    <h2 class="section-title">Our Services</h2>
+<section class="section" id="why">
+  <div class="container">
 
-    <div class="cards">
-
-        <div class="card">
-            <h3>Manpower Supply</h3>
-            <p>
-            Skilled, semi-skilled and unskilled workforce
-            solutions for various business requirements.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Housekeeping</h3>
-            <p>
-            Professional housekeeping and cleaning
-            solutions for commercial and industrial spaces.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Industrial Labour Contracts</h3>
-            <p>
-            Workforce support and labour contract
-            solutions for industrial operations.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Facility Management</h3>
-            <p>
-            Integrated facility management services
-            designed for efficient workplace operations.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<section class="companies" id="companies">
-    <h2 class="section-title">Our Companies</h2>
-
-    <div class="company-name">
-        CRYSTAL SECURITIES
+    <div class="section-heading reveal">
+      <small>OUR COMMITMENT</small>
+      <h2>Why Choose Crystal Securities?</h2>
     </div>
 
-    <div class="company-name">
-        DEVRISHI FACILITY MANAGEMENT PVT. LTD.
+    <div class="why-grid">
+
+      <div class="why-card reveal">
+        <h3>Professional Approach</h3>
+        <p>
+          Focus on responsible service delivery
+          and professional coordination.
+        </p>
+      </div>
+
+      <div class="why-card reveal">
+        <h3>Flexible Solutions</h3>
+        <p>
+          Workforce solutions aligned with
+          different business requirements.
+        </p>
+      </div>
+
+      <div class="why-card reveal">
+        <h3>Quality Focus</h3>
+        <p>
+          Commitment to organised operations
+          and service standards.
+        </p>
+      </div>
+
     </div>
+  </div>
 </section>
 
-<section>
-    <h2 class="section-title">Selected Client References</h2>
-    <div class="clients">
-        <span>L&T</span>
-        <span>ADANI</span>
-        <span>PVR</span>
+<section class="section cta">
+  <div class="container reveal">
+    <div class="tag">LET'S WORK TOGETHER</div>
+    <h2>Looking for Reliable Manpower Solutions?</h2>
+    <p>Connect with Crystal Securities to discuss your requirements.</p>
+    <a href="#contact" class="btn">CONTACT OUR TEAM</a>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="container">
+
+    <div class="section-heading reveal">
+      <small>GET IN TOUCH</small>
+      <h2>Let's Discuss Your Requirements</h2>
     </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-info reveal">
+        <h3>CRYSTAL SECURITIES</h3>
+
+        <p>
+          <strong>Address</strong><br>
+          P-22A, Lane No. 6,<br>
+          Bihari Colony Extension,<br>
+          Shahdara, Delhi - 110032
+        </p>
+
+        <p>
+          <strong>Email</strong><br>
+          <a href="mailto:gaurav@crystalsecurities.co.in">
+          gaurav@crystalsecurities.co.in
+          </a>
+        </p>
+
+        <p>
+          <strong>Business Enquiries</strong><br>
+          Contact us for manpower,
+          housekeeping and facility management requirements.
+        </p>
+      </div>
+
+      <form id="enquiryForm">
+        <input type="text" id="name"
+        placeholder="Your Name" required>
+
+        <input type="text" id="company"
+        placeholder="Company Name">
+
+        <input type="email" id="email"
+        placeholder="Your Email Address" required>
+
+        <input type="tel" id="phone"
+        placeholder="Your Contact Number" required>
+
+        <textarea id="message"
+        placeholder="Tell us about your requirements..."
+        required></textarea>
+
+        <button type="submit" class="btn">
+          SEND BUSINESS ENQUIRY
+        </button>
+      </form>
+
+    </div>
+  </div>
 </section>
 
-<section class="contact" id="contact">
-    <h2 class="section-title">Contact Us</h2>
-
-    <p>Let's discuss your business requirements.</p>
-
-    <p>
-    <strong>Address:</strong><br>
-    P-22A, Lane No. 6, Bihari Colony Extension,<br>
-    Shahdara, Delhi - 110032
-    </p>
-
-    <p>
-    <strong>Email:</strong><br>
-    <a href="mailto:gaurav@crystalsecurities.co.in">
-    gaurav@crystalsecurities.co.in
-    </a>
-    </p>
-
-    <a class="btn"
-       href="mailto:gaurav@crystalsecurities.co.in?subject=Business%20Enquiry">
-       SEND AN ENQUIRY
-    </a>
-</section>
+</main>
 
 <footer>
-    © 2026 <span>Crystal & Devrishi Group</span>.
-    All Rights Reserved.
+  <div class="container">
+    <strong>CRYSTAL SECURITIES</strong>
+    <p>Manpower | Industrial Labour | Housekeeping | Facility Management</p>
+    <p>© 2026 Crystal Securities. All Rights Reserved.</p>
+  </div>
 </footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("open");
+}
+
+function closeMenu() {
+  document.getElementById("navLinks").classList.remove("open");
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(element => {
+  observer.observe(element);
+});
+
+document.getElementById("enquiryForm")
+.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const company = document.getElementById("company").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+  const message = document.getElementById("message").value;
+
+  const subject = encodeURIComponent("New Business Enquiry");
+  const body = encodeURIComponent(
+    "Name: " + name +
+    "\nCompany: " + company +
+    "\nEmail: " + email +
+    "\nPhone: " + phone +
+    "\nRequirements: " + message
+  );
+
+  window.location.href =
+    "mailto:gaurav@crystalsecurities.co.in?subject="
+    + subject + "&body=" + body;
+});
+</script>
 
 </body>
 </html>
+
