@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crystal & Devrishi Group | Facility Management</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080808;
+    color: white;
+}
+
+:root {
+    --gold: #d4af37;
+    --black: #080808;
+}
+
+header {
+    background: #101010;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #39301b;
+}
+
+.logo {
+    color: var(--gold);
+    font-size: 23px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 22px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+.hero {
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    background:
+    linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.85)),
+    url('https://images.unsplash.com/photo-1497366754035-f200968a6e72');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 6vw, 65px);
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 700px;
+    line-height: 1.7;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--gold);
+    color: black;
+    padding: 14px 28px;
+    margin-top: 28px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+section {
+    padding: 80px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 35px;
+    color: var(--gold);
+    margin-bottom: 35px;
+}
+
+.about {
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+    line-height: 1.9;
+    color: #ccc;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #151515;
+    padding: 35px 25px;
+    border: 1px solid #4c4022;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    border-color: var(--gold);
+}
+
+.card h3 {
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #bbb;
+    line-height: 1.7;
+}
+
+.companies {
+    background: #111;
+    text-align: center;
+}
+
+.company-name {
+    color: var(--gold);
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.clients {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+.clients span {
+    font-size: 23px;
+    font-weight: bold;
+    color: var(--gold);
+}
+
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    margin: 15px 0;
+    color: #ccc;
+    line-height: 1.7;
+}
+
+.contact a {
+    color: var(--gold);
+    text-decoration: none;
+}
+
+footer {
+    background: #050505;
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid #4c4022;
+    color: #aaa;
+}
+
+footer span {
+    color: var(--gold);
+}
+
+@media(max-width:700px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0;
+    }
+
+    .hero {
+        min-height: 500px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">CRYSTAL & DEVRISHI</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#companies">Companies</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h1>CRYSTAL & DEVRISHI GROUP</h1>
+    <p>
+        Your Trusted Partner in Manpower Supply,
+        Industrial Labour Contracts and Facility Management.
+    </p>
+    <a href="#contact" class="btn">GET IN TOUCH</a>
+</section>
+
+<section id="about">
+    <h2 class="section-title">About Our Group</h2>
+    <div class="about">
+        <p>
+        Crystal & Devrishi Group is committed to delivering
+        reliable manpower solutions, professional housekeeping
+        and comprehensive facility management services.
+        <br><br>
+        Our focus is on quality, professionalism, operational
+        efficiency and long-term business relationships.
+        We aim to provide dependable workforce solutions
+        for businesses across different industries.
+        </p>
+    </div>
+</section>
+
+<section id="services">
+    <h2 class="section-title">Our Services</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Manpower Supply</h3>
+            <p>
+            Skilled, semi-skilled and unskilled workforce
+            solutions for various business requirements.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Housekeeping</h3>
+            <p>
+            Professional housekeeping and cleaning
+            solutions for commercial and industrial spaces.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Industrial Labour Contracts</h3>
+            <p>
+            Workforce support and labour contract
+            solutions for industrial operations.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Facility Management</h3>
+            <p>
+            Integrated facility management services
+            designed for efficient workplace operations.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="companies" id="companies">
+    <h2 class="section-title">Our Companies</h2>
+
+    <div class="company-name">
+        CRYSTAL SECURITIES
+    </div>
+
+    <div class="company-name">
+        DEVRISHI FACILITY MANAGEMENT PVT. LTD.
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Selected Client References</h2>
+    <div class="clients">
+        <span>L&T</span>
+        <span>ADANI</span>
+        <span>PVR</span>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <h2 class="section-title">Contact Us</h2>
+
+    <p>Let's discuss your business requirements.</p>
+
+    <p>
+    <strong>Address:</strong><br>
+    P-22A, Lane No. 6, Bihari Colony Extension,<br>
+    Shahdara, Delhi - 110032
+    </p>
+
+    <p>
+    <strong>Email:</strong><br>
+    <a href="mailto:gaurav@crystalsecurities.co.in">
+    gaurav@crystalsecurities.co.in
+    </a>
+    </p>
+
+    <a class="btn"
+       href="mailto:gaurav@crystalsecurities.co.in?subject=Business%20Enquiry">
+       SEND AN ENQUIRY
+    </a>
+</section>
+
+<footer>
+    © 2026 <span>Crystal & Devrishi Group</span>.
+    All Rights Reserved.
+</footer>
+
+</body>
+</html>
